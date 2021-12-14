@@ -200,7 +200,9 @@ sudo docker logs container_name
 
 
 
-# Assign a Static IP to the Ubuntu VPS instance in VirtualBox
+# Appendix
+
+## Assign a Static IP to the Ubuntu VPS instance in VirtualBox
 
 > ```bash
 > sudo apt install net-tools
@@ -216,5 +218,45 @@ sudo docker logs container_name
 > 
 > # press ESC and type :wq
 > sudo reboot
+> ```
+
+
+
+## Install .NET Core Apps on Linux 
+
+> ```bash
+> wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+> sudo dpkg -i packages-microsoft-prod.deb
+> sudo apt-get update; \
+>   sudo apt-get install -y apt-transport-https && \
+>   sudo apt-get update && \
+>   sudo apt-get install -y dotnet-sdk-3.1
+> ```
+
+
+
+## Git clone on Ubuntu
+
+> ```bash
+> sudo apt install git
+> git clone https://github.com/?/?.git
+> ```
+
+
+
+## Useful Commands
+
+> ```bash
+> # login as root
+> sudo -s
+> 
+> # create folder
+> mkdir folder_name
+> 
+> # 
+> sudo apt install nautilus-admin
+> 
+> # open port
+> sudo iptables -I INPUT 1 -i eth0 -p tcp --dport 9091 -j ACCEPT
 > ```
 
