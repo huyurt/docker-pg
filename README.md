@@ -235,6 +235,18 @@ sudo docker logs container_name
 
 
 
+## Install SQL Server
+
+> ```bash
+> wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+> sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2019.list)"
+> sudo apt-get update
+> sudo apt-get install -y mssql-server
+> sudo /opt/mssql/bin/mssql-conf setup
+> ```
+
+
+
 ## Git clone on Ubuntu
 
 > ```bash
@@ -258,5 +270,11 @@ sudo docker logs container_name
 > 
 > # open port
 > sudo iptables -I INPUT 1 -i eth0 -p tcp --dport 9091 -j ACCEPT
+> 
+> # check file system disk space usage
+> df
+> 
+> # create backup image
+> sudo dd if=/dev/sda conv=sync,noerror bs=64K | gzip -c  > /path/backup_image.img.gz
 > ```
 
